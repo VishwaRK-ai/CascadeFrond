@@ -1,0 +1,17 @@
+{
+  "tests": 1,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "SmokeTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "CompilationAndLinking",
+          "file": "\/Users\/vishwesh\/Desktop\/CascadeFrond\/tests\/smoke_test.cpp",
+          "line": 3
+        }
+      ]
+    }
+  ]
+}
