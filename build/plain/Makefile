@@ -224,6 +224,19 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
+# Target rules for targets named betree_pager
+
+# Build rule for target.
+betree_pager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 betree_pager
+.PHONY : betree_pager
+
+# fast build rule for target.
+betree_pager/fast:
+	$(MAKE) $(MAKESILENT) -f src/pager/CMakeFiles/betree_pager.dir/build.make src/pager/CMakeFiles/betree_pager.dir/build
+.PHONY : betree_pager/fast
+
+#=============================================================================
 # Target rules for targets named smoke_test
 
 # Build rule for target.
@@ -235,6 +248,19 @@ smoke_test: cmake_check_build_system
 smoke_test/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/smoke_test.dir/build.make tests/CMakeFiles/smoke_test.dir/build
 .PHONY : smoke_test/fast
+
+#=============================================================================
+# Target rules for targets named pager_test
+
+# Build rule for target.
+pager_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pager_test
+.PHONY : pager_test
+
+# fast build rule for target.
+pager_test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/build
+.PHONY : pager_test/fast
 
 # Help Target
 help:
@@ -249,10 +275,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... betree_pager"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... pager_test"
 	@echo "... smoke_test"
 .PHONY : help
 

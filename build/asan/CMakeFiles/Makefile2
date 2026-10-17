@@ -64,21 +64,25 @@ CMAKE_BINARY_DIR = /Users/vishwesh/Desktop/CascadeFrond/build/asan
 
 # The main recursive "all" target.
 all: _deps/googletest-build/all
+all: src/all
 all: tests/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: _deps/googletest-build/codegen
+codegen: src/codegen
 codegen: tests/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
 preinstall: _deps/googletest-build/preinstall
+preinstall: src/preinstall
 preinstall: tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: _deps/googletest-build/clean
+clean: src/clean
 clean: tests/clean
 .PHONY : clean
 
@@ -149,14 +153,54 @@ _deps/googletest-build/googletest/clean: _deps/googletest-build/googletest/CMake
 .PHONY : _deps/googletest-build/googletest/clean
 
 #=============================================================================
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/pager/all
+.PHONY : src/all
+
+# Recursive "codegen" directory target.
+src/codegen: src/pager/codegen
+.PHONY : src/codegen
+
+# Recursive "preinstall" directory target.
+src/preinstall: src/pager/preinstall
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/pager/clean
+.PHONY : src/clean
+
+#=============================================================================
+# Directory level rules for directory src/pager
+
+# Recursive "all" directory target.
+src/pager/all: src/pager/CMakeFiles/betree_pager.dir/all
+.PHONY : src/pager/all
+
+# Recursive "codegen" directory target.
+src/pager/codegen: src/pager/CMakeFiles/betree_pager.dir/codegen
+.PHONY : src/pager/codegen
+
+# Recursive "preinstall" directory target.
+src/pager/preinstall:
+.PHONY : src/pager/preinstall
+
+# Recursive "clean" directory target.
+src/pager/clean: src/pager/CMakeFiles/betree_pager.dir/clean
+.PHONY : src/pager/clean
+
+#=============================================================================
 # Directory level rules for directory tests
 
 # Recursive "all" directory target.
 tests/all: tests/CMakeFiles/smoke_test.dir/all
+tests/all: tests/CMakeFiles/pager_test.dir/all
 .PHONY : tests/all
 
 # Recursive "codegen" directory target.
 tests/codegen: tests/CMakeFiles/smoke_test.dir/codegen
+tests/codegen: tests/CMakeFiles/pager_test.dir/codegen
 .PHONY : tests/codegen
 
 # Recursive "preinstall" directory target.
@@ -165,6 +209,7 @@ tests/preinstall:
 
 # Recursive "clean" directory target.
 tests/clean: tests/CMakeFiles/smoke_test.dir/clean
+tests/clean: tests/CMakeFiles/pager_test.dir/clean
 .PHONY : tests/clean
 
 #=============================================================================
@@ -174,7 +219,7 @@ tests/clean: tests/CMakeFiles/smoke_test.dir/clean
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=1,2 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=7,8 "Built target gmock"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -191,7 +236,7 @@ gmock: _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=1,2 "Finished codegen for target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=7,8 "Finished codegen for target gmock"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/codegen
 
 # clean rule for target.
@@ -207,7 +252,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletes
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=3,4 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=9,10 "Built target gmock_main"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -224,7 +269,7 @@ gmock_main: _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=3,4 "Finished codegen for target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=9,10 "Finished codegen for target gmock_main"
 .PHONY : _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/codegen
 
 # clean rule for target.
@@ -239,7 +284,7 @@ _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=5,6 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=11,12 "Built target gtest"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -256,7 +301,7 @@ gtest: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=5,6 "Finished codegen for target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=11,12 "Finished codegen for target gtest"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest.dir/codegen
 
 # clean rule for target.
@@ -271,7 +316,7 @@ _deps/googletest-build/googletest/CMakeFiles/gtest.dir/clean:
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=7,8 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=13,14 "Built target gtest_main"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -288,13 +333,45 @@ gtest_main: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/rule
 # codegen rule for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=7,8 "Finished codegen for target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=13,14 "Finished codegen for target gtest_main"
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/codegen
 
 # clean rule for target.
 _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean:
 	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
 .PHONY : _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/clean
+
+#=============================================================================
+# Target rules for target src/pager/CMakeFiles/betree_pager.dir
+
+# All Build rule for target.
+src/pager/CMakeFiles/betree_pager.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/pager/CMakeFiles/betree_pager.dir/build.make src/pager/CMakeFiles/betree_pager.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/pager/CMakeFiles/betree_pager.dir/build.make src/pager/CMakeFiles/betree_pager.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target betree_pager"
+.PHONY : src/pager/CMakeFiles/betree_pager.dir/all
+
+# Build rule for subdir invocation for target.
+src/pager/CMakeFiles/betree_pager.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/pager/CMakeFiles/betree_pager.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles 0
+.PHONY : src/pager/CMakeFiles/betree_pager.dir/rule
+
+# Convenience name for target.
+betree_pager: src/pager/CMakeFiles/betree_pager.dir/rule
+.PHONY : betree_pager
+
+# codegen rule for target.
+src/pager/CMakeFiles/betree_pager.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f src/pager/CMakeFiles/betree_pager.dir/build.make src/pager/CMakeFiles/betree_pager.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target betree_pager"
+.PHONY : src/pager/CMakeFiles/betree_pager.dir/codegen
+
+# clean rule for target.
+src/pager/CMakeFiles/betree_pager.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/pager/CMakeFiles/betree_pager.dir/build.make src/pager/CMakeFiles/betree_pager.dir/clean
+.PHONY : src/pager/CMakeFiles/betree_pager.dir/clean
 
 #=============================================================================
 # Target rules for target tests/CMakeFiles/smoke_test.dir
@@ -304,7 +381,7 @@ tests/CMakeFiles/smoke_test.dir/all: _deps/googletest-build/googletest/CMakeFile
 tests/CMakeFiles/smoke_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/smoke_test.dir/build.make tests/CMakeFiles/smoke_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/smoke_test.dir/build.make tests/CMakeFiles/smoke_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=9,10 "Built target smoke_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=17,18 "Built target smoke_test"
 .PHONY : tests/CMakeFiles/smoke_test.dir/all
 
 # Build rule for subdir invocation for target.
@@ -321,13 +398,47 @@ smoke_test: tests/CMakeFiles/smoke_test.dir/rule
 # codegen rule for target.
 tests/CMakeFiles/smoke_test.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/smoke_test.dir/build.make tests/CMakeFiles/smoke_test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=9,10 "Finished codegen for target smoke_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=17,18 "Finished codegen for target smoke_test"
 .PHONY : tests/CMakeFiles/smoke_test.dir/codegen
 
 # clean rule for target.
 tests/CMakeFiles/smoke_test.dir/clean:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/smoke_test.dir/build.make tests/CMakeFiles/smoke_test.dir/clean
 .PHONY : tests/CMakeFiles/smoke_test.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/pager_test.dir
+
+# All Build rule for target.
+tests/CMakeFiles/pager_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest.dir/all
+tests/CMakeFiles/pager_test.dir/all: _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/all
+tests/CMakeFiles/pager_test.dir/all: src/pager/CMakeFiles/betree_pager.dir/all
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=15,16 "Built target pager_test"
+.PHONY : tests/CMakeFiles/pager_test.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/pager_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/pager_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles 0
+.PHONY : tests/CMakeFiles/pager_test.dir/rule
+
+# Convenience name for target.
+pager_test: tests/CMakeFiles/pager_test.dir/rule
+.PHONY : pager_test
+
+# codegen rule for target.
+tests/CMakeFiles/pager_test.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/vishwesh/Desktop/CascadeFrond/build/asan/CMakeFiles --progress-num=15,16 "Finished codegen for target pager_test"
+.PHONY : tests/CMakeFiles/pager_test.dir/codegen
+
+# clean rule for target.
+tests/CMakeFiles/pager_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/clean
+.PHONY : tests/CMakeFiles/pager_test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

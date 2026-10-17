@@ -1,0 +1,20 @@
+include("/opt/homebrew/share/cmake/Modules/GoogleTestAddTests.cmake")
+gtest_discover_tests_impl(
+  TEST_TARGET [==[pager_test]==]
+  TEST_EXECUTABLE [==[/Users/vishwesh/Desktop/CascadeFrond/build/plain/tests/pager_test]==]
+  TEST_EXECUTOR [==[]==]
+  TEST_WORKING_DIR [==[/Users/vishwesh/Desktop/CascadeFrond/build/plain/tests]==]
+  TEST_EXTRA_ARGS [==[]==]
+  TEST_PROPERTIES [==[]==]
+  TEST_PREFIX [==[]==]
+  TEST_SUFFIX [==[]==]
+  TEST_FILTER [==[]==]
+  NO_PRETTY_TYPES [==[FALSE]==]
+  NO_PRETTY_VALUES [==[FALSE]==]
+  TEST_LIST [==[pager_test_TESTS]==]
+  CTEST_FILE [==[/Users/vishwesh/Desktop/CascadeFrond/build/plain/tests/pager_test_e3b0c442_tests.cmake]==]
+  TEST_DISCOVERY_TIMEOUT [==[5]==]
+  TEST_DISCOVERY_EXTRA_ARGS [==[]==]
+  TEST_XML_OUTPUT_DIR [==[]==]
+  TEST_JSON_OUTPUT_DIR [==[/Users/vishwesh/Desktop/CascadeFrond/build/plain/tests]==]
+)

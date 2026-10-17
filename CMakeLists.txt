@@ -4,10 +4,7 @@ project(betree_dbms CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Strict warnings
-add_compile_options(-Wall -Wextra -Wpedantic -Werror)
-
-# Fetch GoogleTest
+# 1. Fetch GoogleTest FIRST (without our strict warnings)
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -16,11 +13,12 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+# 2. NOW turn on strict warnings so they only apply to our code
+add_compile_options(-Wall -Wextra -Wpedantic -Werror)
+
+# Link the source directory
+add_subdirectory(src)
+
 # Allow tests to be discovered
 enable_testing()
 add_subdirectory(tests)
-
-#bypassing mac errors
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-  target_compile_options(gtest PRIVATE "-Wno-character-conversion")
-endif()

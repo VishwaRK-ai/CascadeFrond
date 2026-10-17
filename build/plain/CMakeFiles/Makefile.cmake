@@ -20,6 +20,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/googletest-src/googletest/cmake/gtest.pc.in"
   "_deps/googletest-src/googletest/cmake/gtest_main.pc.in"
   "_deps/googletest-src/googletest/cmake/internal_utils.cmake"
+  "/Users/vishwesh/Desktop/CascadeFrond/src/CMakeLists.txt"
+  "/Users/vishwesh/Desktop/CascadeFrond/src/pager/CMakeLists.txt"
   "/Users/vishwesh/Desktop/CascadeFrond/tests/CMakeLists.txt"
   "/opt/homebrew/share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "/opt/homebrew/share/cmake/Modules/CMakeCInformation.cmake"
@@ -92,8 +94,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/googletest-build/googletest/generated/gtest.pc"
   "_deps/googletest-build/googletest/generated/gtest_main.pc"
   "_deps/googletest-build/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/pager/CMakeFiles/CMakeDirectoryInformation.cmake"
   "tests/smoke_test_e3b0c442_discovery.cmake"
   "tests/smoke_test_e3b0c442_include.cmake"
+  "tests/pager_test_e3b0c442_discovery.cmake"
+  "tests/pager_test_e3b0c442_include.cmake"
   "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -103,5 +109,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "src/pager/CMakeFiles/betree_pager.dir/DependInfo.cmake"
   "tests/CMakeFiles/smoke_test.dir/DependInfo.cmake"
+  "tests/CMakeFiles/pager_test.dir/DependInfo.cmake"
   )

@@ -1,10 +1,10 @@
-Start testing: Oct 14 22:47 IST
+Start testing: Oct 17 15:11 IST
 ----------------------------------------------------------
-1/1 Testing: SmokeTest.CompilationAndLinking
-1/1 Test: SmokeTest.CompilationAndLinking
+1/3 Testing: SmokeTest.CompilationAndLinking
+1/3 Test: SmokeTest.CompilationAndLinking
 Command: "/Users/vishwesh/Desktop/CascadeFrond/build/tsan/tests/smoke_test" "--gtest_filter=SmokeTest.CompilationAndLinking" "--gtest_also_run_disabled_tests"
 Directory: /Users/vishwesh/Desktop/CascadeFrond/build/tsan/tests
-"SmokeTest.CompilationAndLinking" start time: Oct 14 22:47 IST
+"SmokeTest.CompilationAndLinking" start time: Oct 17 15:11 IST
 Output:
 ----------------------------------------------------------
 Running main() from /Users/vishwesh/Desktop/CascadeFrond/build/tsan/_deps/googletest-src/googletest/src/gtest_main.cc
@@ -23,8 +23,62 @@ Note: Google Test filter = SmokeTest.CompilationAndLinking
 Test time =   0.24 sec
 ----------------------------------------------------------
 Test Passed.
-"SmokeTest.CompilationAndLinking" end time: Oct 14 22:47 IST
+"SmokeTest.CompilationAndLinking" end time: Oct 17 15:11 IST
 "SmokeTest.CompilationAndLinking" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Oct 14 22:47 IST
+2/3 Testing: PagerTest.AllocateAndReadWrite<betree::MemPager>
+2/3 Test: PagerTest.AllocateAndReadWrite<betree::MemPager>
+Command: "/Users/vishwesh/Desktop/CascadeFrond/build/tsan/tests/pager_test" "--gtest_filter=PagerTest/0.AllocateAndReadWrite" "--gtest_also_run_disabled_tests"
+Directory: /Users/vishwesh/Desktop/CascadeFrond/build/tsan/tests
+"PagerTest.AllocateAndReadWrite<betree::MemPager>" start time: Oct 17 15:11 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/vishwesh/Desktop/CascadeFrond/build/tsan/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PagerTest/0.AllocateAndReadWrite
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PagerTest/0, where TypeParam = betree::MemPager
+[ RUN      ] PagerTest/0.AllocateAndReadWrite
+[       OK ] PagerTest/0.AllocateAndReadWrite (0 ms)
+[----------] 1 test from PagerTest/0 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.24 sec
+----------------------------------------------------------
+Test Passed.
+"PagerTest.AllocateAndReadWrite<betree::MemPager>" end time: Oct 17 15:11 IST
+"PagerTest.AllocateAndReadWrite<betree::MemPager>" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/3 Testing: PagerTest.AllocateAndReadWrite<betree::FilePager>
+3/3 Test: PagerTest.AllocateAndReadWrite<betree::FilePager>
+Command: "/Users/vishwesh/Desktop/CascadeFrond/build/tsan/tests/pager_test" "--gtest_filter=PagerTest/1.AllocateAndReadWrite" "--gtest_also_run_disabled_tests"
+Directory: /Users/vishwesh/Desktop/CascadeFrond/build/tsan/tests
+"PagerTest.AllocateAndReadWrite<betree::FilePager>" start time: Oct 17 15:11 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/vishwesh/Desktop/CascadeFrond/build/tsan/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PagerTest/1.AllocateAndReadWrite
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PagerTest/1, where TypeParam = betree::FilePager
+[ RUN      ] PagerTest/1.AllocateAndReadWrite
+[       OK ] PagerTest/1.AllocateAndReadWrite (0 ms)
+[----------] 1 test from PagerTest/1 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.24 sec
+----------------------------------------------------------
+Test Passed.
+"PagerTest.AllocateAndReadWrite<betree::FilePager>" end time: Oct 17 15:11 IST
+"PagerTest.AllocateAndReadWrite<betree::FilePager>" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 17 15:11 IST

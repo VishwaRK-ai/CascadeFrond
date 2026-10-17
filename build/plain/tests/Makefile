@@ -185,6 +185,44 @@ smoke_test/fast:
 	cd /Users/vishwesh/Desktop/CascadeFrond/build/plain && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/smoke_test.dir/build.make tests/CMakeFiles/smoke_test.dir/build
 .PHONY : smoke_test/fast
 
+# Convenience name for target.
+tests/CMakeFiles/pager_test.dir/rule:
+	cd /Users/vishwesh/Desktop/CascadeFrond/build/plain && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/pager_test.dir/rule
+.PHONY : tests/CMakeFiles/pager_test.dir/rule
+
+# Convenience name for target.
+pager_test: tests/CMakeFiles/pager_test.dir/rule
+.PHONY : pager_test
+
+# fast build rule for target.
+pager_test/fast:
+	cd /Users/vishwesh/Desktop/CascadeFrond/build/plain && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/build
+.PHONY : pager_test/fast
+
+pager_test.o: pager_test.cpp.o
+.PHONY : pager_test.o
+
+# target to build an object file
+pager_test.cpp.o:
+	cd /Users/vishwesh/Desktop/CascadeFrond/build/plain && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/pager_test.cpp.o
+.PHONY : pager_test.cpp.o
+
+pager_test.i: pager_test.cpp.i
+.PHONY : pager_test.i
+
+# target to preprocess a source file
+pager_test.cpp.i:
+	cd /Users/vishwesh/Desktop/CascadeFrond/build/plain && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/pager_test.cpp.i
+.PHONY : pager_test.cpp.i
+
+pager_test.s: pager_test.cpp.s
+.PHONY : pager_test.s
+
+# target to generate assembly for a file
+pager_test.cpp.s:
+	cd /Users/vishwesh/Desktop/CascadeFrond/build/plain && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/pager_test.dir/build.make tests/CMakeFiles/pager_test.dir/pager_test.cpp.s
+.PHONY : pager_test.cpp.s
+
 smoke_test.o: smoke_test.cpp.o
 .PHONY : smoke_test.o
 
@@ -222,7 +260,11 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... pager_test"
 	@echo "... smoke_test"
+	@echo "... pager_test.o"
+	@echo "... pager_test.i"
+	@echo "... pager_test.s"
 	@echo "... smoke_test.o"
 	@echo "... smoke_test.i"
 	@echo "... smoke_test.s"

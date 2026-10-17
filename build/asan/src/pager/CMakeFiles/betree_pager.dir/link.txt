@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbetree_pager.a CMakeFiles/betree_pager.dir/mempager.cpp.o CMakeFiles/betree_pager.dir/filepager.cpp.o CMakeFiles/betree_pager.dir/counting_pager.cpp.o CMakeFiles/betree_pager.dir/latency_pager.cpp.o CMakeFiles/betree_pager.dir/checksum.cpp.o
+/usr/bin/ranlib libbetree_pager.a

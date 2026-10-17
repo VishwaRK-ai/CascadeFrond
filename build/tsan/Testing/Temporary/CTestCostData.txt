@@ -1,2 +1,4 @@
-SmokeTest.CompilationAndLinking 1 0.240941
+SmokeTest.CompilationAndLinking 2 0.118682
+PagerTest.AllocateAndReadWrite<betree::MemPager> 1 0.236318
+PagerTest.AllocateAndReadWrite<betree::FilePager> 1 0.236947
 ---

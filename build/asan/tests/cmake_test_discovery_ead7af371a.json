@@ -1,0 +1,30 @@
+{
+  "tests": 2,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "PagerTest\/0",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "AllocateAndReadWrite",
+          "type_param": "betree::MemPager",
+          "file": "\/Users\/vishwesh\/Desktop\/CascadeFrond\/tests\/pager_test.cpp",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "name": "PagerTest\/1",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "AllocateAndReadWrite",
+          "type_param": "betree::FilePager",
+          "file": "\/Users\/vishwesh\/Desktop\/CascadeFrond\/tests\/pager_test.cpp",
+          "line": 40
+        }
+      ]
+    }
+  ]
+}

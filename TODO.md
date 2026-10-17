@@ -1,0 +1,10 @@
+Fix before building on it
+
+pager.h, read_page(PageId, PageBuffer&): a unique_ptr as an I/O parameter ties ownership to access. In Phase 5 the buffer pool will want frames that are slices of one aligned arena, so take uint8_t* or std::span<uint8_t, PAGE_SIZE> instead.
+mempager.cpp, allocate_page_id: new pages come from posix_memalign, which doesn't zero them, so a read returns garbage. FilePager returns false for the same never-written page (EOF), so the backends disagree. Decide that an allocated page reads as zeros, and make every backend do it.
+filepager.cpp, write_page: else if (errno != EINTR) also runs when pwrite returns 0, where errno is stale, so it can loop forever. Retry only on res < 0 && errno == EINTR, and treat everything else as failure.
+filepager.cpp, sync(): the fdatasync and F_FULLFSYNC results are ignored, and sync() returns void. A failed fsync has to be reported, because the WAL phase depends on it.
+free_page_id in both pagers: there's no double-free or range check, so a double free puts the same ID on the free list twice and two owners get one page. FilePager can also underflow its counter.
+checksum.cpp isn't called by any pager, and there is no page-header layout, so the Phase 1 exit criterion (a corrupted page is detected) isn't met. Decide where it lives, for example a ChecksumPager decorator or the buffer pool. FNV-1a over 4 KiB is also a serial multiply per byte and weak for integrity, so CRC32C is the better choice.
+latency_pager: it measures time and doesn't inject any, so it's really a timing decorator and the name misleads. Its counters are plain uint64_t, which TSan will flag in Phase 8. It truncates to microseconds, so MemPager times sum to zero, and it doesn't time sync().
+FilePager owns fd_ but is implicitly copyable, which means a double close. Delete the copy operations, and the same goes for Pager.

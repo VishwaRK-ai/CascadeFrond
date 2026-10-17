@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -isystem /Users/vishwesh/Desktop/CascadeFrond/build/asan/_deps/googletest-src/googletest/include -isystem /Users/vishwesh/Desktop/CascadeFrond/build/asan/_deps/googletest-src/googletest
 
-CXX_FLAGSarm64 = -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=gnu++14 -arch arm64 -Wall -Wextra -Wpedantic -Werror
+CXX_FLAGSarm64 = -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=gnu++20 -arch arm64 -Wall -Wextra -Wpedantic -Werror
 
-CXX_FLAGS = -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=gnu++14 -arch arm64 -Wall -Wextra -Wpedantic -Werror
+CXX_FLAGS = -fsanitize=address,undefined -fno-omit-frame-pointer -g -std=gnu++20 -arch arm64 -Wall -Wextra -Wpedantic -Werror
 

@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/vishwesh/Desktop/CascadeFrond/build/tsan/_deps/googletest-src/googlemock/include -I/Users/vishwesh/Desktop/CascadeFrond/build/tsan/_deps/googletest-src/googlemock -isystem /Users/vishwesh/Desktop/CascadeFrond/build/tsan/_deps/googletest-src/googletest/include -isystem /Users/vishwesh/Desktop/CascadeFrond/build/tsan/_deps/googletest-src/googletest
 
-CXX_FLAGSarm64 = -fsanitize=thread -fno-omit-frame-pointer -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -Wall -Wextra -Wpedantic -Werror
+CXX_FLAGSarm64 = -fsanitize=thread -fno-omit-frame-pointer -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1  
 
-CXX_FLAGS = -fsanitize=thread -fno-omit-frame-pointer -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -Wall -Wextra -Wpedantic -Werror
+CXX_FLAGS = -fsanitize=thread -fno-omit-frame-pointer -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1  
 
