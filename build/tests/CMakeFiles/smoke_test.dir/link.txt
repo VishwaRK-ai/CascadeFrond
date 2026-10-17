@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/smoke_test.dir/smoke_test.cpp.o -o smoke_test  ../lib/libgtest_main.a ../lib/libgtest.a
