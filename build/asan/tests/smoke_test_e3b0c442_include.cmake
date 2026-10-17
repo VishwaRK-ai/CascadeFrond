@@ -1,5 +1,0 @@
-if(EXISTS "/Users/vishwesh/Desktop/CascadeFrond/build/asan/tests/smoke_test_e3b0c442_tests.cmake")
-  include("/Users/vishwesh/Desktop/CascadeFrond/build/asan/tests/smoke_test_e3b0c442_tests.cmake")
-else()
-  add_test(smoke_test_NOT_BUILT smoke_test_NOT_BUILT)
-endif()
